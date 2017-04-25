@@ -10,12 +10,11 @@ import Foundation
 
 extension String {
     func subString(with:(start: Int,end: Int)) -> String {
+        
         let str = self
         
         let startIndex = str.index(str.startIndex, offsetBy: with.start)
         let endIndex = str.index(str.startIndex, offsetBy: with.end)
-        
-        
         
         return str.substring(with:
             Range.init(uncheckedBounds:
@@ -29,3 +28,13 @@ let str = "Hello, World!"
 print(str)
 
 print(str.subString(with: (7, 13)))
+
+
+//第二种方法
+//先转换为NSString 再截取
+/*let strNew:NSString = str as NSString
+ numbers.append(Int(
+ strNew.substring(with:
+ NSMakeRange(
+ lastIndex,
+ currentIndex - lastIndex)))!)*/
